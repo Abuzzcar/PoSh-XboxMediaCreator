@@ -24,7 +24,7 @@ IF ($DriveNumber -ne 0){
     clear-disk -number $DriveNumber -removedata
     
     #creates a new partition and allocates it to maximum size, then formats into NTFS with the Label of XboxMediaUSBDrive
-    new-partition -disknumber $DriveNumber -usemaximumsize | format-volume -filesystem NTFS -newfilesystemlabel XboxMediaUSBDrive
+    new-partition -disknumber $DriveNumber -usemaximumsize | format-volume -filesystem NTFS -newfilesystemlabel XboxMediaDrive
     get-partition -disknumber $DriveNumber | set-partition -newdriveletter X
 
     [bool] $hasNewDriveLetter = $false
@@ -35,7 +35,7 @@ IF ($DriveNumber -ne 0){
         if (!(Test-Path -Path "$driveLetter`:\\")) {
         # If the drive doesn't exist, save and write as new partition disk letter
         $firstNonExistingDriveLetter = $driveLetter 
-        Write-Host $firstNonExistingDriveLetter "isn't populated, therefore this is the new drive letter for the XboxMediaUSBDrive" -ForegroundColor Cyan
+        Write-Host $firstNonExistingDriveLetter "isn't populated, therefore this is the new drive letter for the XboxMediaDrive" -ForegroundColor Cyan
         get-partition -disknumber $DriveNumber | set-partition -newdriveletter $firstNonExistingDriveLetter
         break
         }
@@ -46,7 +46,7 @@ IF ($DriveNumber -ne 0){
 }
 
 $consoles = "Atari 5200", "Nintendo SNES/SFC", "Bandai WonderSwan/Color", "Game Boy Advance", "Atari Lynx", "Neo Geo Pocket/Color", "NEC PC-FX", "NEC PC Engine/SuperGrafx/CD", "Sony PlayStation", "Sega Saturn", "Nintendo Virtual Boy", "Sega Genesis (Mega Drive)", "MSX/SVI/ColecoVision/SG-1000", "Nintendo NES/Famicom", "Nintendo 3DS", "Amstrad CPC", "Philips CDi", "Nintendo 64"
-$directories = "Cores", "System/BIOS", "Screenshots", "Cheats", "Thumbnails"
+$directories = "Cores", "System/BIOS", "Screenshots", "Cheats", "Thumbnails", "Configs", "Playlists", "States","Shaders","Saves"
 
 $DrivePath = $firstNonExistingDriveLetter + ':'
 
