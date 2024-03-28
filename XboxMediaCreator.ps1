@@ -1,4 +1,4 @@
-﻿Write-Host "Welcome to Abuzzcar's XboxMediaUSBMedia Creation Script" -ForegroundColor Yellow
+﻿Write-Host "Welcome to Abuzzcar's XboxMediaCreation Script" -ForegroundColor Yellow
 Write-Host "The current disks will be displayed, please wait a moment." -ForegroundColor Red
 
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
