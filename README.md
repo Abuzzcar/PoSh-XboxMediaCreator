@@ -2,7 +2,7 @@
 A PowerShell Script with the sole purpose of making it easy to create an Xbox Media Device.
 
 # Be careful running it and DO NOT RUSH!
-  - By running this script, you agree to take responsibility for anything done to your machine, including any wiping of drives if you are not careful with the script and choose the wrong drive.
+  - ⚠️ By running this script, you agree to take responsibility for anything done to your machine, including any wiping of drives if you are not careful with the script and choose the wrong drive. ⚠️
   - It is important to note that getting the disks listed at the first running of the script might take some time, so please be patient.
 
 # To run the script
